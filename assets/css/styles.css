@@ -448,12 +448,12 @@ box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
 }
 
 .about__img{
-  width: 220px;
+  width: 420px;
   border-radius: 1.5rem;
   justify-self: center;
   clip-path: circle(29.0% at 51% 47%);
   object-fit: cover;
-  object-position: 10px 40px;
+  object-position: 16px 60px;
 }
 
 .about__data{
@@ -484,7 +484,9 @@ box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
 }
 
 .about__subtitle{
-  font-size: var(--tiny-font-size);
+  font-size: 16px;
+  margin-top: 10px;
+  display: block;
 }
 
 .about__description{
