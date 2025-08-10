@@ -146,3 +146,89 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data`)
 sr.reveal(`.home__handle`, {delay:700} )
 sr.reveal(`.home__social, .home__scroll`, {delay:900, origin:'bottom'} )
+
+/* Cursor animado */
+
+const b1 = document.getElementById("blob1");
+const b2 = document.getElementById("blob2");
+const b3 = document.getElementById("blob3");
+const footer = document.querySelector('#footer');
+
+
+
+
+
+
+const altura = footer ? footer.getBoundingClientRect().height : 0;
+const postionBlod1 = b1 ? b1.getBoundingClientRect().right : 0
+
+
+
+
+
+
+let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
+let p1 = { ...mouse }, p2 = { ...mouse }, p3 = { ...mouse };
+let v3 = { x: 0, y: 0 };  // velocidad del blob3
+let last2 = { ...mouse };
+
+document.addEventListener("mousemove", e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+
+
+function animate() {
+  // Blob 1: sigue el ratón
+  p1.x += (mouse.x - p1.x) * 0.25;
+  p1.y += (mouse.y - p1.y) * 0.25;
+  b1.style.left = p1.x + "px";
+  b1.style.top = p1.y + "px";
+
+  // Blob 2: sigue al primero más lento
+  p2.x += (p1.x - p2.x) * 0.1;
+  p2.y += (p1.y - p2.y) * 0.1;
+  b2.style.left = p2.x + "px";
+  b2.style.top = p2.y + "px";
+
+  // calcular velocidad del segundo blob
+  const vx = p2.x - last2.x;
+  const vy = p2.y - last2.y;
+  last2.x = p2.x;
+  last2.y = p2.y;
+
+  // target extendido hacia adelante
+  const targetX = p2.x + vx * 10;
+  const targetY = p2.y + vy * 10;
+
+  // movimiento tipo resorte (elasticidad real)
+  const spring = 0.01;      // fuerza del resorte
+  const damping = 0.88;     // amortiguación
+
+  const fx = (targetX - p3.x) * spring;
+  const fy = (targetY - p3.y) * spring;
+
+  v3.x = (v3.x + fx) * damping;
+  v3.y = (v3.y + fy) * damping;
+
+  p3.x += v3.x;
+  p3.y += v3.y;
+
+  b3.style.left = `${p3.x}px`;
+  b3.style.top = `${p3.y}px`;
+
+   if (mouse.y > 293 ) {
+    b1.style.backgroundColor = "hsl(207,90%,36%)"
+    b2.style.backgroundColor = "hsl(207,90%,36%)"
+    b3.style.backgroundColor = "hsl(207,90%,36%)"   
+  } else {
+     b1.style.backgroundColor = "rgb(53, 190, 253)"   
+     b2.style.backgroundColor = "rgb(53, 190, 253)"   
+     b3.style.backgroundColor = "rgb(53, 190, 253)"   
+  }
+
+	requestAnimationFrame(animate);
+}
+
+animate();

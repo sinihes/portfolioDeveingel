@@ -18,7 +18,7 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./assets/css/styles.css">
 
-    <meta property="og:title" content="Sinihescode - Training developer">
+    <meta property="og:title" content="Sinihescode - Junior developer">
     <meta property="og:description" content="Portfolio personal DevEingel">
     <meta property="og:image" content="https://sinihescode.com/assets/img/miniatura.png">
     <meta property="og:url" content="https://sinihescode.com">
@@ -28,6 +28,25 @@
 </head>
 
 <body>
+    <div class="gooey">
+  <div class="blob small one " id="blob1"></div>
+  <div class="blob large" id="blob2"></div>
+  <div class="blob small " id="blob3"></div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix"
+        values="1 0 0 0 0  
+                0 1 0 0 0  
+                0 0 1 0 0  
+                0 0 0 30 -10" result="goo"/>
+      <feBlend in="SourceGraphic" in2="goo"/>
+    </filter>
+  </defs>
+</svg>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -54,7 +73,7 @@
                 <div class="home__data">
                     <span class="home__greeting">Hola, Soy</span>
                     <h1 class="home__name">Ángel Pérez</h1>
-                    <h3 class="home__education">Training Developer</h3>
+                    <h3 class="home__education">Junior Developer</h3>
                     <div class="home__buttons">
                         <a download="" href="./assets/pdf/CV-AngelPerez.pdf" class="button button__ghost">
                             Download CV
@@ -197,18 +216,25 @@
                             </div>
                         </div>
                         <div class="skills__group">
-                            <div class="skills__data">
+                                                        <div class="skills__data">
                                 <i class="bx bxs-badge-check"></i>
                                 <div>
-                                    <h3 class="skills__name">MySQL</h3>
-                                    <span class="skills__level">Basico</span>
+                                    <h3 class="skills__name">PHP</h3>
+                                    <span class="skills__level">Basic</span>
                                 </div>
                             </div>
                             <div class="skills__data">
                                 <i class="bx bxs-badge-check"></i>
                                 <div>
-                                    <h3 class="skills__name">Firebase</h3>
+                                    <h3 class="skills__name">Laravel</h3>
                                     <span class="skills__level">Basic</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="bx bxs-badge-check"></i>
+                                <div>
+                                    <h3 class="skills__name">MySQL</h3>
+                                    <span class="skills__level">Basico</span>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +244,7 @@
         </section>
 
         <!--=============== SERVICES ===============-->
-        <section class="services section">
+<!--         <section class="services section">
             <span class="section__subtitle">My Services</span>
             <h2 class="section__title">What I Offer</h2>
             <div class="services__container container grid">
@@ -365,7 +391,7 @@
                 
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!--=============== WORK ===============-->
         <section class="work section sectionzone" id="work">
@@ -434,7 +460,7 @@
         </section>
 
         <!--=============== TESTIMONIALS ===============-->
-        <section class="testimonial section" id="testimonial">
+<!--         <section class="testimonial section" id="testimonial">
             <span class="section__subtitle">Mis clientes dicen</span>
             <h2 class="section__title">Testimonios</h2>
             <div class="testimonial__container container swiper">
@@ -463,7 +489,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
-
+ -->
         <!--=============== CONTACT ===============-->
         <section class="contact section sectionzone" id="contact">
             <span class="section__subtitle">Ponerse en contacto</span>
@@ -476,7 +502,7 @@
                         <div class="contact__card">
                             <i class="bx bx-mail-send contact__card-icon"></i>
                             <h3 class="contact__card-title">Email</h3>
-                            <span class="contact__card-data">deveingel@gmail.com</span>
+                            <span class="contact__card-data"><img src="./assets/img/mail.png" alt=""></span>
                             <a href="mailto:deveingel@gmail.com" target="_blank" class="contact__button">
                                 Escríbeme <i class="bx bx-right-arrow-alt contact__button-icon"></i>
                             </a>
@@ -504,7 +530,7 @@
     </main>
 
     <!--=============== FOOTER ===============-->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__container container">
             <h1 class="footer__title">DevEingel</h1>
             <ul class="footer__list">

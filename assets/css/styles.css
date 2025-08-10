@@ -795,7 +795,7 @@ box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
 
 .contact__card-title,
 .contact__card-data{
-  font-size: var(--small-font-size);
+  font-size: 11px;
 }
 
 .contact__card-title{
@@ -1177,3 +1177,72 @@ box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
 
 
 }
+
+/* Cursor animado */
+
+.gooey {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  filter: url('#goo'); /* filtro gooey que une los blobs */ 
+}
+
+.blob {
+  position: absolute;
+  background: var(--first-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blob.small {
+  width: 50px; height: 50px;
+}
+
+.blob.large {
+  width: 80px; height: 80px;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--first-color);
+}
+
+.blob.small.one {
+  width: 50px;
+  height: 50px;
+  position: relative; /* Para posicionar ::before */
+  overflow: visible;
+  border-radius: 50%;
+  z-index: 2; /* Que esté sobre el blob2 */
+}
+
+#blob1::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle at center, var(--first-color), transparent 80%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(4px);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Más alto para que quede encima */
+}
+
+
+/* 
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 56%); /* -4% */
+  --title-color: hsl(var(--second-hue), 15%, 95%);
+  --text-color: hsl(var(--second-hue), 8%, 75%);
+  --text-color-light: hsl(var(--second-hue), 4%, 55%);
+  --body-color: hsl(var(--second-hue), 48%, 8%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+
+
+*/
