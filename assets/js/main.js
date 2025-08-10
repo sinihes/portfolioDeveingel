@@ -153,7 +153,7 @@ const b1 = document.getElementById("blob1");
 const b2 = document.getElementById("blob2");
 const b3 = document.getElementById("blob3");
 const footer = document.querySelector('#footer');
-
+const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const altura = footer ? footer.getBoundingClientRect().height : 0;
 
@@ -208,7 +208,10 @@ function animate() {
   b3.style.left = `${p3.x}px`;
   b3.style.top = `${p3.y}px`;
 
-   if (mouse.y > altura ) {
+
+
+if (isMobile) {
+     if (mouse.y > altura ) {
     b1.style.backgroundColor = "hsl(207,90%,36%)"
     b2.style.backgroundColor = "hsl(207,90%,36%)"
     b3.style.backgroundColor = "hsl(207,90%,36%)"   
@@ -217,6 +220,10 @@ function animate() {
      b2.style.backgroundColor = "rgb(53, 190, 253)"   
      b3.style.backgroundColor = "rgb(53, 190, 253)"   
   }
+}
+
+
+
 
 	requestAnimationFrame(animate);
 }
