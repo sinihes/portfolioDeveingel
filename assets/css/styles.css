@@ -1233,16 +1233,3 @@ box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
   transform: translate(-50%, -50%);
   z-index: 10; /* Más alto para que quede encima */
 }
-
-
-/* 
-  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
-  --first-color-alt: hsl(var(--first-hue), var(--sat), 56%); /* -4% */
-  --title-color: hsl(var(--second-hue), 15%, 95%);
-  --text-color: hsl(var(--second-hue), 8%, 75%);
-  --text-color-light: hsl(var(--second-hue), 4%, 55%);
-  --body-color: hsl(var(--second-hue), 48%, 8%);
-  --container-color: hsl(var(--second-hue), 32%, 12%);
-
-
-*/

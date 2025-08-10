@@ -155,17 +155,7 @@ const b3 = document.getElementById("blob3");
 const footer = document.querySelector('#footer');
 
 
-
-
-
-
 const altura = footer ? footer.getBoundingClientRect().height : 0;
-const postionBlod1 = b1 ? b1.getBoundingClientRect().right : 0
-
-
-
-
-
 
 let mouse = { x: window.innerWidth/2, y: window.innerHeight/2 };
 let p1 = { ...mouse }, p2 = { ...mouse }, p3 = { ...mouse };
@@ -218,7 +208,7 @@ function animate() {
   b3.style.left = `${p3.x}px`;
   b3.style.top = `${p3.y}px`;
 
-   if (mouse.y > 293 ) {
+   if (mouse.y > altura ) {
     b1.style.backgroundColor = "hsl(207,90%,36%)"
     b2.style.backgroundColor = "hsl(207,90%,36%)"
     b3.style.backgroundColor = "hsl(207,90%,36%)"   
